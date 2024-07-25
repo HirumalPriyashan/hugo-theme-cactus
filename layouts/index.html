@@ -1,7 +1,10 @@
 {{ define "main" }}
   <section id="about">
+  {{ if isset .Site.Params "greetings" }}
+    <p>{{ .Site.Params.greetings | $.Page.RenderString }}</p>
+  {{ end }}
   {{ if isset .Site.Params "description" }}
-    {{ .Site.Params.description | $.Page.RenderString }}
+    <p>{{ .Site.Params.description | $.Page.RenderString }}</p>
   {{ end }}
   {{ if isset .Site.Params "social" }}
       <p>Find me on
